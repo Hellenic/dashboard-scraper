@@ -1,0 +1,48 @@
+{
+  "name": "dashboard-scraper",
+  "version": "0.0.1",
+  "description": "Data scraper for the Dashboard API",
+  "homepage": "",
+  "license": "MIT",
+  "author": {
+    "name": "Hannu Kärkkäinen",
+    "email": "hannu.karkkainen@gmail.com",
+    "url": "http://blankpace.net/HK/"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "dashboard",
+    "scraper",
+    "node",
+    "api"
+  ],
+  "repository": "Hellenic/dashboard-scraper",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "install": "^0.4.1",
+    "npm": "^3.5.2",
+    "osmosis": "^0.1.0",
+    "sleep": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-babel": "^5.1.0",
+    "del": "^2.0.2",
+    "babel-core": "^5.5.0",
+    "isparta": "^3.0.3"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp test",
+    "scrape": "node dist/index.js"
+  }
+}
