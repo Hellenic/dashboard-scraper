@@ -7,6 +7,10 @@ Build changes with:
 ```
 gulp
 ```
+Pre-fetch data with:
+```
+gulp prefetch
+```
 Run tests with:
 ```
 gulp test
