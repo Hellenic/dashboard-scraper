@@ -69,17 +69,20 @@ gulp.task('prefetch', function() {
   // Data can be re-downloaded from here:
   // According to the terms the URL shouldn't be referenced directly – at least not very often.
   // Thus we download it if we don't have it or it's older than a month
+  if (fs.statSync('data/') == null)
+  {
+    fs.mkdirSync('data/');
+  }
   fs.stat('data/Liputuspäivät.json', function(error, stats) {
     // If our file is older than from this month, re-download it
     if (typeof(stats) === "undefined" || moment().isAfter(stats.mtime, 'month'))
     {
-      console.log('Downloading Finnish Flag days data...');
-      request('http://www.webcal.fi/cal.php?id=2&format=json&start_year=current_year&end_year=current_year&tz=Europe%2FHelsinki')
-        .pipe(fs.createWriteStream('data/Liputuspäivät.json'));
+      var CAL_URL = 'http://www.webcal.fi/cal.php?format=json&start_year=current_year&end_year=current_year&tz=Europe%2FHelsinki'
+      console.log('Downloading Finnish special days data...');
+      request(CAL_URL + '&id=1').pipe(fs.createWriteStream('data/Pyhät.json'));
+      request(CAL_URL + '&id=2').pipe(fs.createWriteStream('data/Liputuspäivät.json'));
     }
   });
-
-  console.log('Data has been refreshed – server is good to go!');
 });
 
 gulp.task('prepublish', ['nsp', 'babel']);
