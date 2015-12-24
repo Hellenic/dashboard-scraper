@@ -1,5 +1,11 @@
-# dashboard-scraper [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# dashboard-scraper [![Dependency Status][daviddm-image]][daviddm-url]
 > Data scraper for the Dashboard API
+
+This scraper fetches data from some public APIs or websites, handles the data
+and then passes it on to the dashboard-backend.
+
+The data is used in personal use only and the data is scraper manually, maximum
+once per day.
 
 ## Usage
 
@@ -21,11 +27,10 @@ Install dependencies with:
 npm install
 ```
 
-Run scraping with
+Run scraping with (do not run this often)
 ```
 npm run scrape
 ```
-
 
 ## License
 
